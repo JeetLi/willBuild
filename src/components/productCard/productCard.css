@@ -1,0 +1,10 @@
+.product_unit__mob {
+  display: none;
+  color: #c2c2c2;
+}
+@media (max-width: 768px) {
+  .product_unit__mob {
+    font-size: 10px;
+    display: contents;
+  }
+}
