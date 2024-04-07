@@ -51,8 +51,8 @@ const ContactMap: React.FC = () => {
           </div>
           <div className="text">
             <b>Адрес</b>
-            Г.Москва МУНИЦИПАЛЬНЫЙ ОКРУГ ЗАМОСКВОРЕЧЬЕ УЛ БОЛЬШАЯ СЕРПУХОВСКАЯ
-            40 СТРОЕНИЕ 2 ОФИС
+            117628, город Москва, вн.тер. г. Муниципальный Округ Северное
+            Бутово, ул. Грина, дом 32, помещение 8
           </div>
         </div>
         <div className="contacts_map_block_item row">
@@ -74,10 +74,10 @@ const ContactMap: React.FC = () => {
           </div>
           <div className="text">
             <b>Телефон</b>
-            <a href="tel:+7 495 431 54 26" className="phone">
-              +7 495 431 54 26
+            <a href="tel:+7 495 979 88 98" className="phone">
+              +7 495 979 88 98
             </a>
-            <a href="tel:+7  977 946 07 80" className="phone">
+            <a href="tel:+7 977 946 07 80" className="phone">
               +7 977 946 07 80
             </a>
           </div>
@@ -119,7 +119,7 @@ const ContactMap: React.FC = () => {
           </div>
           <div className="text">
             <b>Почта</b>
-            <a href="mailto:BUILSMAIN@MAIL.RU">BUILSMAIN@MAIL.RU</a>
+            <a href="mailto:info@BudemStroit.ru">info@BudemStroit.ru</a>
           </div>
         </div>
         <div className="contacts_map_block_item row">
@@ -139,7 +139,7 @@ const ContactMap: React.FC = () => {
           </div>
           <div className="text">
             <b>Время работы</b>
-            Пн-Пт 10:00-23:00
+            Пн-Пт 09:00-19:00
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ROUTES } from "../../models/constant";
 // import { BACKEND_URL_API_PRICELIST } from "@/app/stores/helper";
 import AsideNavItem from "./common/asideNavItem";
-import { useGetCategoryTreeQuery } from "../../redux/service/api";
+import { CategoryType, useGetCategoryTreeQuery } from "../../redux/service/api";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -15,24 +15,41 @@ interface Category {
 const AsideNav: React.FC = () => {
   const { data: categories, isLoading } = useGetCategoryTreeQuery();
 
-  const renderSkeletons = () => {
-    return Array.from({ length: 8 }, (_, index) => (
-      <li key={index} className="header_menu_item">
-        <div className="header_menu_item_wrap">
-          <SkeletonTheme
-            baseColor="#f3f3f3"
-            // highlightColor="#ecebeb"
-            highlightColor="#000"
-            duration={0.9}
-            direction="ltr"
-            enableAnimation
-          >
-            <Skeleton width={200} height={30} />
-          </SkeletonTheme>
-        </div>
-      </li>
-    ));
-  };
+  const PreloadedCategoriesArr: CategoryType[]  = [
+    {
+      id: 1,
+      name: "СТРОЙМАТЕРИАЛЫ",
+    },
+    {
+      id: 230,
+      name: "ОТДЕЛОЧНЫЕ МАТЕРИАЛЫ",
+    },
+    {
+      id: 785,
+      name: "ИНСТРУМЕНТЫ",
+    },
+    {
+      id: 1158,
+      name: "КРЕПЕЖНЫЕ СИСТЕМЫ",
+    },
+    {
+      id: 1652,
+      name: "САНТЕХНИЧЕСКАЯ ГРУППА",
+    },
+    {
+      id: 1813,
+      name: "ОТОПЛЕНИЕ",
+    },
+    {
+      id: 1857,
+      name: "ЭЛЕКТРИКА И ВЕНТИЛЯЦИЯ",
+    },
+    {
+      id: 2079,
+      name: "ТОВАРЫ ДЛЯ ДОМА И САДА",
+    },
+  ];
+
 
   return (
     <div className="header_menu_wrap">
@@ -40,7 +57,13 @@ const AsideNav: React.FC = () => {
         <Link to={ROUTES.main} className="logo"></Link>
         <ul className="header_menu_nav">
           {isLoading
-            ? renderSkeletons()
+            ? PreloadedCategoriesArr.map((category, index) => (
+                <AsideNavItem
+                  key={category.id}
+                  index={index}
+                  category={category}
+                />
+              ))
             : categories?.map((category, index) => (
                 <AsideNavItem
                   key={category.id}
